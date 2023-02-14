@@ -26,9 +26,8 @@ namespace test1
                     ints[n] = tp;
                 }
 
-
-
                 Console.WriteLine($"{ints[0]},{ints[1]},{ints[2]},{ints[3]}");
+
                 while (true)
                 {
 
@@ -43,9 +42,6 @@ namespace test1
                     {
                         enter[i] = Convert.ToInt32(c[i].ToString());
                     }
-
-
-
 
                     for (int i = 0; i < 4; i++)
                     {
@@ -71,18 +67,16 @@ namespace test1
                     if (a == 4)
                     {
                         Console.WriteLine("恭喜你猜對了");
-                        Console.WriteLine("你還要繼續玩嗎?(y/n)");
-
-                        
-
-                    }
-
-                    if (Console.ReadLine() == "n")
-                    {
                         break;
+
                     }
 
+                }
 
+                Console.WriteLine("你還要繼續玩嗎?(y/n)");
+                if (Console.ReadLine() == "n")
+                {
+                    break;
                 }
             }
 
