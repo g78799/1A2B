@@ -66,7 +66,7 @@ namespace test1
 
                     }
 
-                    Console.WriteLine($"判定結果是{a}A,{b}");
+                    Console.WriteLine($"判定結果是{a}A,{b}B");
 
                     if (a == 4)
                     {
