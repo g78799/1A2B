@@ -10,66 +10,80 @@ namespace test1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("歡迎來到1A2B猜數字遊戲");
-
-            int[] ints = new int []{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-            int tp = 0;
-            Random rnd = new Random();
-
-            for (int i = 0; i<ints.Length; i++)
+            while (true) 
             {
-                int n = rnd.Next(ints.Length); 
-                tp = ints[i];
-                ints[i] = ints[n];
-                ints[n] = tp;
-            }
+                Console.WriteLine("歡迎來到1A2B猜數字遊戲");
 
+                int[] ints = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+                int tp = 0;
+                Random rnd = new Random();
 
-
-            Console.WriteLine($"{ints[0]},{ints[1]},{ints[2]},{ints[3]}");
-            Console.WriteLine("請輸入數字");
-
-            int[] enter = new int[4];
-            int a = 0, b = 0;
-            string c = Console.ReadLine();
-
-            
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < ints.Length; i++)
                 {
-                    enter[i] = Convert.ToInt32(c[i].ToString());
+                    int n = rnd.Next(ints.Length);
+                    tp = ints[i];
+                    ints[i] = ints[n];
+                    ints[n] = tp;
                 }
 
 
 
-
-                for (int i = 0; i < 4; i++)
+                Console.WriteLine($"{ints[0]},{ints[1]},{ints[2]},{ints[3]}");
+                while (true)
                 {
-                    if (enter[i] == ints[i])
+
+                    Console.WriteLine("請輸入數字");
+
+                    int[] enter = new int[4];
+                    int a = 0, b = 0;
+                    string c = Console.ReadLine();
+
+
+                    for (int i = 0; i < 4; i++)
                     {
-                        a++;
+                        enter[i] = Convert.ToInt32(c[i].ToString());
                     }
-                    for (int j = 0; j < 4; j++)
+
+
+
+
+                    for (int i = 0; i < 4; i++)
                     {
-                        if (enter[j] == ints[i])
+                        if (enter[i] == ints[i])
                         {
-                          b++;
+                            a++;
                         }
+                        else
+                        {
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (enter[j] == ints[i])
+                                {
+                                    b++;
+                                }
+                            }
+                        }
+
                     }
+
+                    Console.WriteLine($"判定結果是{a}A,{b}");
+
+                    if (a == 4)
+                    {
+                        Console.WriteLine("恭喜你猜對了");
+                        Console.WriteLine("你還要繼續玩嗎?(y/n)");
+
+                        
+
+                    }
+
+                    if (Console.ReadLine() == "n")
+                    {
+                        break;
+                    }
+
+
                 }
-
-
-                b -= a;
-
-                
-
-                Console.WriteLine($"{a}A,{b}B");
-            
-
-            
-
-            if (a==4)
-            {
-                Console.WriteLine("答案正確");
             }
 
             
