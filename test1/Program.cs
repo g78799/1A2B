@@ -15,15 +15,15 @@ namespace test1
                 Console.WriteLine("歡迎來到1A2B猜數字遊戲");
 
                 int[] ints = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-                int tp = 0;
+                int temp = 0;
                 Random rnd = new Random();
 
                 for (int i = 0; i < ints.Length; i++)
                 {
                     int n = rnd.Next(ints.Length);
-                    tp = ints[i];
+                    temp = ints[i];
                     ints[i] = ints[n];
-                    ints[n] = tp;
+                    ints[n] = temp;
                 }
 
                 Console.WriteLine($"{ints[0]},{ints[1]},{ints[2]},{ints[3]}");
@@ -79,11 +79,6 @@ namespace test1
                     break;
                 }
             }
-
-            
-
-            
-
 
             Console.ReadLine();
 
